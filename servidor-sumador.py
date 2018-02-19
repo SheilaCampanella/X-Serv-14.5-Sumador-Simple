@@ -42,8 +42,8 @@ try:
         try:
             numero1 = float(numero1)
             numero2 = float(numero2)
-            solucion = calculadora.funciones[operacion](numero1, numero2)
-            respuesta = ("La solucion es: " + str(solucion))
+            resultado = calculadora.funciones[operacion](numero1, numero2)
+            answer = ("La solucion es: " + str(resultado))
         except ValueError:
             respuesta = "Los tipos deben ser numericos"
         except KeyError:
@@ -52,7 +52,7 @@ try:
             respuesta = "No dividas entre cero"
 
         recvSocket.send(bytes("HTTP/1.1 200 OK\r\n\r\n" +
-                        "<p>" + respuesta +
+                        "<p>" + answer +
                         "</p></body></html>" +
                         "\r\n", "utf-8"))
         recvSocket.close()

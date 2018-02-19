@@ -43,7 +43,7 @@ try:
             numero1 = float(numero1)
             numero2 = float(numero2)
             solucion = calculadora.funciones[operacion](numero1, numero2)
-            respuesta = ("La solucion es: " +str(solucion))
+            respuesta = ("La solucion es: " + str(solucion))
         except ValueError:
             respuesta = "Los tipos deben ser numericos"
         except KeyError:
